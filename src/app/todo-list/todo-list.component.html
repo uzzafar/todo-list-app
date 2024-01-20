@@ -1,0 +1,49 @@
+<!-- task-list.component.html -->
+<div class="task-list-container">
+  <div class="filter-section">
+    <div class="filter-item">
+      <label for="filterTitle">Title:</label>
+      <input id="filterTitle" type="text" [(ngModel)]="filterTitle" class="form-control">
+    </div>
+    <div class="filter-item">
+      <label for="filterDate">Date:</label>
+      <input id="filterDate" type="date" [(ngModel)]="filterDate" (change)="filterTasks()" class="form-control">
+    </div>
+    <div class="filter-item">
+      <label for="filterGroups">Group:</label>
+      <ng-select id="filterGroups" [items]="groups" bindLabel="name" bindValue="name" [multiple]="true" 
+                 [(ngModel)]="filterGroups" (change)="filterTasks()" class="form-control">
+      </ng-select>
+    </div>
+  </div>
+
+  <div class="task-groups">
+    @for (group of filteredTaskGroups; track group.name) {
+    <div class="task-group">
+      <h2>{{ group.name }}</h2>
+      @for (task of group.tasks; track task.id) {
+      <div class="task-item">
+        <div class="task-details">
+          <input type="checkbox" [(ngModel)]="task.selected" (change)="updateSelectedTasks()" class="form-check-input">
+          <span><a >{{ task.title }}</a></span>
+          <span>{{ task.deliveryDate | date:'short' }}</span>
+          <span class="task-state">{{ task.state }}</span>
+        </div>
+        <div class="task-actions">
+          <button (click)="deleteTask(task)" class="btn btn-danger">Delete</button>
+          <button (click)="markDone(task)" class="btn btn-success">Done</button>
+          <button (click)="navigate(task)" class="btn btn-success">Details</button>
+        </div>
+      </div>
+    }
+    </div>
+  }
+  </div>
+
+  <div class="task-actions-footer">
+    <button [disabled]="!anyTaskSelected()" (click)="deleteSelected()" class="btn btn-danger">Delete Selected</button>
+    <button [disabled]="!anyTaskSelected()" (click)="markSelectedDone()" class="btn btn-success">Mark Selected Done</button>
+    <button (click)="createNewTask()" class="btn btn-primary">Create New Task</button>
+  </div>
+</div>
+

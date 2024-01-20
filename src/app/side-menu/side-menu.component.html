@@ -1,0 +1,19 @@
+<div class="side-menu">
+    <div class="menu-item" (click)="navigate('Home')">Home</div>
+    <div class="menu-item" (click)="navigate('ALL')">ALL</div>
+    <div class="menu-item" (click)="navigate('Today')">Today</div>
+    <div class="menu-item" (click)="navigate('Week')">Week</div>
+    <div class="menu-item" (click)="navigate('Done')">Done</div>
+    <div class="menu-item" (click)="navigate('Deleted')">Deleted</div>
+  
+    <div class="menu-group" (click)="toggleGroupMenu()">
+      Groups
+      <div class="group-menu">
+        @for (group of groups; track group) {
+          <li class="menu-item" (click)="filterByGroup(group)">{{ group }}</li>
+        }
+        
+      </div>
+    </div>
+  </div>
+  

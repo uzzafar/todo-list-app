@@ -1,0 +1,70 @@
+.task-list-container
+  display: flex
+  flex-direction: column
+  margin: 20px
+
+.filter-section
+  display: flex
+  justify-content: space-between
+  margin-bottom: 20px
+
+  .filter-item
+    flex: 0 0 30%
+    margin-right: 10px
+
+    label
+      font-weight: bold
+      margin-bottom: 5px
+      display: block
+
+    input, ng-select
+      width: 100%
+      padding: 8px
+      border: 1px solid #ccc
+      border-radius: 4px
+
+.task-groups
+  .task-group
+    margin-bottom: 20px
+
+    h2
+      font-size: 1.5em
+      margin-bottom: 10px
+
+    .task-item
+      display: flex
+      align-items: center
+      justify-content: space-between
+      background-color: #f9f9f9
+      border: 1px solid #ddd
+      border-radius: 4px
+      padding: 10px
+      margin-bottom: 10px
+
+      .task-details
+        flex: 0 0 70%
+
+        input
+          margin-right: 10px
+
+        span
+          margin-right: 10px
+
+        .task-state
+          font-weight: bold
+          color: #555
+
+      .task-actions
+        flex: 0 0 30%
+        text-align: right
+
+        button
+          margin-left: 5px
+
+.task-actions-footer
+  display: flex
+  justify-content: flex-end
+  margin-top: 20px
+
+  button
+    margin-left: 10px

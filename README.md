@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
 
+## Installation
+- Clone this repository to your local machine using:
+`git clone https://github.com/uzairzaffar/todo-list-app.git`
+
+- Navigate to the project directory:
+`cd todo-list-app`
+
+- Install the project dependencies:
+`npm install`
+
+## Usage
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

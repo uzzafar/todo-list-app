@@ -1,0 +1,29 @@
+<div class="task-details-container">
+  <h2>Task Details</h2>
+  <div>
+    <label>Title:</label>
+    <span>{{ task.title }}</span>
+  </div>
+  <div>
+    <label>Description:</label>
+    <span>{{ task.description }}</span>
+  </div>
+  <div>
+    <label>Priority:</label>
+    <span>{{ task.priority }}</span>
+  </div>
+  <div>
+    <label>Delivery Date:</label>
+    <span>{{ task.deliveryDate }}</span>
+  </div>
+  <div>
+    <label>Group:</label>
+    <span>{{ task.group }}</span>
+  </div>
+  <div>
+    <label>Completed:</label>
+    <span>{{ task.completed ? 'Yes' : 'No' }}</span>
+  </div>
+
+  <button color="primary" (click)="goBackToList()">Go Back</button>
+</div>
